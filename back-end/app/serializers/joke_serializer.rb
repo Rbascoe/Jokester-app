@@ -1,4 +1,9 @@
 class JokeSerializer
   include FastJsonapi::ObjectSerializer
-  attributes 
+  attributes :description, :laughs, :frowns, :user_id
+
+  belongs_to :user
+  has_many :jokecategories
+  has_many :categories, through: :jokecategories
+
 end
