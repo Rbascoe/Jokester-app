@@ -6,6 +6,36 @@
     <title>Jokester</title>
 </head>
 <body>
-    
+    <form action="/action_page.php">
+        <h1>Create a Joke</h1>
+        <div class="icon">
+          <i class="fas fa-user-circle"></i>
+        </div>
+        <div class="formcontainer">
+        <div class="container">
+          <label><strong>Description:</strong></label>
+          <input type="text" placeholder="Enter a Joke"><br>
+          <label><strong>Author:</strong></label>
+          <input type="text" placeholder="Enter your Username"><br>
+          <label><strong>Categories:</strong></label><br>
+          <input type="checkbox" id="technology" name="technology">
+          <label for="technology">Technology</label><br>
+          <input type="checkbox" id="dad jokes" name="dad jokes">
+          <label for="dad jokes">Dad Jokes</label><br>
+          <input type="checkbox" id="miscellaneous" name="miscellaneous">
+          <label for="miscellaneous">Miscellaneous</label><br>
+          <input type="checkbox" id="animal Jokes" name="animal Jokes">
+          <label for="animal Jokes">Animal Jokes</label><br>
+          <input type="checkbox" id="knock knock jokes" name="knock knock jokes">
+          <label for="knock knock jokes">Knock Knock Jokes</label>
+        </div><br>
+        <button type="submit"><strong>Make Joke</strong></button>
+      </form>
+    <div class="joke-div">
+        <ul id="joke-list">
+
+        </ul>
+    </div>
+    <script src="index.js"></script> 
 </body>
 </html>
