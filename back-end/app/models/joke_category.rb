@@ -1,4 +1,4 @@
 class JokeCategory < ApplicationRecord
-    belongs_to :Joke
-    belongs_to :Category 
+    belongs_to :joke
+    belongs_to :category 
 end
