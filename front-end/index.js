@@ -22,7 +22,7 @@ function showJokes(users){
 
 }
 
-jokeForm.addEventListener('submit', ()=>{
+jokeForm.addEventListener('submit', () => {
     event.preventDefault()
     //console.log(event.target)
     let descriptionInput = event.target[0].value
@@ -39,7 +39,7 @@ jokeForm.addEventListener('submit', ()=>{
             user: authorInput
         })
     }
-    fetch(userUrl, configObj)
+    fetch(userUrl,configObj)
     .then(res => res.json())
     .then(console.log)
     
