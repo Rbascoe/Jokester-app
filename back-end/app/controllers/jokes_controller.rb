@@ -1,4 +1,4 @@
-class JokeController < ApplicationController
+class JokesController < ApplicationController
 
     before_action :find_joke, only: [:show]
 
@@ -9,6 +9,11 @@ class JokeController < ApplicationController
 
     def show
         render json: @joke
+    end
+
+    def create
+        joke = Joke.create(joke_params)
+        render json: joke
     end
 
 

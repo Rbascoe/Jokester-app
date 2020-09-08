@@ -1,2 +1,0 @@
-class JokeCategoryController < ApplicationController
-end

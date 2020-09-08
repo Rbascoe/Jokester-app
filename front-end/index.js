@@ -1,10 +1,11 @@
-const userUrl = "http://localhost:3000/user"
+const usersUrl = "http://localhost:3000/users"
+const jokesUrl = "http://localhost:3000/jokes"
 
 const ul = document.querySelector('ul#joke-list')
 const jokeForm = document.querySelector('form.create-joke')
 
 function getUsers(){
-    fetch(userUrl)
+    fetch(usersUrl)
     .then(res => res.json())
     .then(users => users.forEach(users => showJokes(users)))
 }
@@ -28,7 +29,18 @@ jokeForm.addEventListener('submit', () => {
     let descriptionInput = event.target[0].value
     let authorInput = event.target[0].value
 
-    let configObj = {
+    // let configObj = {
+    //     method: 'POST',
+    //     headers: {
+    //         'Content-Type': 'application/json',
+    //         'Accept': 'application/json'
+    //     },
+    //     body: JSON.stringify({
+    //         description: descriptionInput,
+    //         user: authorInput
+    //     })
+    // }
+    fetch(jokesUrl, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -38,8 +50,7 @@ jokeForm.addEventListener('submit', () => {
             description: descriptionInput,
             user: authorInput
         })
-    }
-    fetch(userUrl,configObj)
+    })
     .then(res => res.json())
     .then(console.log)
     
