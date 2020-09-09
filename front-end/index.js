@@ -29,7 +29,7 @@ function showJokes(users){
         //     description.description
         // })
 
-        let authorInput = event.target[1].value
+        // let authorInput = event.target[1].value
     
         // let configObj = {
         //     method: 'POST',
@@ -52,7 +52,7 @@ function showJokes(users){
                 description: descriptionInput,
                 laughs: 0,
                 frowns: 0,
-                user_id: authorInput
+                user_id: 
             })
         })
         .then(res => res.json())
