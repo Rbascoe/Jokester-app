@@ -4,7 +4,7 @@ class JokesController < ApplicationController
 
     def index
         jokes = Joke.all 
-        render json: jokes
+        render json: jokes, includes: :user
     end
 
     def show
@@ -24,7 +24,7 @@ class JokesController < ApplicationController
     end
 
     def joke_params
-        parmas.require(:joke).permit(:description, :laughs, :frowns, :user_id)
+        params.require(:joke).permit(:description, :laughs, :frowns, :user_id)
     end
 
 end

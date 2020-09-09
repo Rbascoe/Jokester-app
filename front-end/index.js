@@ -21,37 +21,44 @@ function showJokes(users){
     jokeLi.append(footer)
     ul.append(jokeLi) })
 
+    jokeForm.addEventListener('submit', () => {
+        event.preventDefault()
+        //console.log(event.target)
+        let descriptionInput = event.target[0].value
+        // let descript = users.jokes.forEach(description => {
+        //     description.description
+        // })
+
+        let authorInput = event.target[1].value
+    
+        // let configObj = {
+        //     method: 'POST',
+        //     headers: {
+        //         'Content-Type': 'application/json',
+        //         'Accept': 'application/json'
+        //     },
+        //     body: JSON.stringify({
+        //         description: descriptionInput,
+        //         user: authorInput
+        //     })
+        // }
+        fetch(jokesUrl, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify({
+                description: descriptionInput,
+                laughs: 0,
+                frowns: 0,
+                user_id: authorInput
+            })
+        })
+        .then(res => res.json())
+        .then(console.log)
+        
+    })
+
 }
 
-jokeForm.addEventListener('submit', () => {
-    event.preventDefault()
-    //console.log(event.target)
-    let descriptionInput = event.target[0].value
-    let authorInput = event.target[0].value
-
-    // let configObj = {
-    //     method: 'POST',
-    //     headers: {
-    //         'Content-Type': 'application/json',
-    //         'Accept': 'application/json'
-    //     },
-    //     body: JSON.stringify({
-    //         description: descriptionInput,
-    //         user: authorInput
-    //     })
-    // }
-    fetch(jokesUrl, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-        },
-        body: JSON.stringify({
-            description: descriptionInput,
-            user: authorInput
-        })
-    })
-    .then(res => res.json())
-    .then(console.log)
-    
-})
