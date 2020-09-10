@@ -1,6 +1,6 @@
 class JokesController < ApplicationController
 
-    before_action :find_joke, only: [:show]
+    before_action :find_joke, only: [:show, :update]
 
     def index
         jokes = Joke.all 
@@ -15,6 +15,12 @@ class JokesController < ApplicationController
         joke = Joke.create(joke_params)
         render json: joke
     end
+
+    def update
+        @joke.update(joke_params)
+        render json: @joke
+    end
+
 
 
     private

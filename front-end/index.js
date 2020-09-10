@@ -1,5 +1,6 @@
 const usersUrl = "http://localhost:3000/users"
-const jokesUrl = "http://localhost:3000/jokes"
+const jokesUrl = "http://localhost:3000/jokes/"
+// const jokeUrl = `http://localhost:3000/jokes/${joke.id}`
 
 const ul = document.querySelector('ul#joke-list')
 const selector = document.querySelector('select#user-selector')
@@ -22,10 +23,10 @@ function showJokes(users){
         jokeLi.innerText = jokes.description
         const laughBtn = document.createElement('button')
 
-            laughBtn.innerHTML = `Laughs: <span> ${jokes.laughs}</span>`
+            laughBtn.innerText = 'Laughs: ' + jokes.laughs
             laughBtn.addEventListener('click', () => {
                 //console.log(event.target)
-        
+                let newLaughs = ++jokes.laughs 
                 let configObj = {
                     method: 'PATCH',
                     headers:{
@@ -38,13 +39,34 @@ function showJokes(users){
                     })
                     
                 }
-                fetch(jokesUrl, configObj)
+                fetch(jokesUrl+jokes.id, configObj)
                 .then(res => res.json())
-                .then(console.log)
+                .then(laughs => laughBtn.innerText = 'Laughs: ' + jokes.laughs)
             })
 
         const frownBtn = document.createElement('button')
-        frownBtn.innerHTML = `Frowns: <span> ${jokes.frowns}</span>`
+
+        frownBtn.innerText = 'Frowns: ' + jokes.frowns
+            frownBtn.addEventListener('click', () => {
+                //console.log(event.target)
+                let newFrowns = ++jokes.frowns
+                let configObj = {
+                    method: 'PATCH',
+                    headers:{
+                        'Content-Type': 'application/json',
+                        Accept: 'application/json'
+                    },
+                    body: JSON.stringify({
+                        frowns: newFrowns
+
+                    })
+                    
+                }
+                fetch(jokesUrl+jokes.id, configObj)
+                .then(res => res.json())
+                .then(frowns => frownBtn.innerText = 'Frowns: ' + jokes.frowns)
+            })
+
         jokeLi.append(footer, laughBtn, frownBtn)
         ul.append(jokeLi) })
 
