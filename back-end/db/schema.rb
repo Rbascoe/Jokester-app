@@ -18,18 +18,12 @@ ActiveRecord::Schema.define(version: 2020_09_05_172924) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "joke_categories", force: :cascade do |t|
-    t.integer "joke_id"
-    t.integer "category_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "jokes", force: :cascade do |t|
     t.string "description"
     t.integer "laughs"
     t.integer "frowns"
     t.integer "user_id"
+    t.integer "category_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

@@ -5,6 +5,7 @@ class CreateJokes < ActiveRecord::Migration[6.0]
       t.integer :laughs
       t.integer :frowns
       t.integer :user_id
+      t.integer :category_id
 
       t.timestamps
     end
