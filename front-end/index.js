@@ -20,10 +20,37 @@ function showJokes(users){
         const footer = document.createElement('footer')
         footer.innerText = user.username
         jokeLi.innerText = jokes.description
-        jokeLi.append(footer)
+        const laughBtn = document.createElement('button')
+
+            laughBtn.innerHTML = `Laughs: <span> ${jokes.laughs}</span>`
+            laughBtn.addEventListener('click', () => {
+                //console.log(event.target)
+        
+                let configObj = {
+                    method: 'PATCH',
+                    headers:{
+                        'Content-Type': 'application/json',
+                        Accept: 'application/json'
+                    },
+                    body: JSON.stringify({
+                        laughs: newLaughs
+
+                    })
+                    
+                }
+                fetch(jokesUrl, configObj)
+                .then(res => res.json())
+                .then(console.log)
+            })
+
+        const frownBtn = document.createElement('button')
+        frownBtn.innerHTML = `Frowns: <span> ${jokes.frowns}</span>`
+        jokeLi.append(footer, laughBtn, frownBtn)
         ul.append(jokeLi) })
 
-    )
+        )
+
+
     users.forEach(user => {
         const userSelector = document.createElement('option')
         userSelector.innerText = user.username
@@ -50,8 +77,6 @@ function showJokes(users){
             let authorName = users.find(user => user.id == authorInput).username
             let categoryInput = event.target[2].value
             let categoryTitle = categories.find(category => category.id == categoryInput).title
-        
-        
         
             // for (let i in users){
             //     if (users[i].id == authorInput){
@@ -89,6 +114,7 @@ function showJokes(users){
             
         })
     }
+
         
 
 
