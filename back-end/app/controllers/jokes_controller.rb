@@ -3,7 +3,8 @@ class JokesController < ApplicationController
     before_action :find_joke, only: [:show, :update]
 
     def index
-        jokes = Joke.all 
+        jokes = Joke.all
+        # @top_one = Joke.top_one
         render json: jokes, includes: :user
     end
 
