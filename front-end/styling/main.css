@@ -23,6 +23,10 @@ min-height: 290px; }
     border-bottom: 1px solid black;
 }
 
+#jokes-header{
+    font-size: 300%;
+}
+
 strong{
     font-family: 'Comic Neue', cursive;
     font-size: large;

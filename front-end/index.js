@@ -28,7 +28,7 @@ function showJokes(users){
         const laughBtn = document.createElement('span')
 
         
-        laughBtn.innerHTML = `<span class='laugh-btn '>&#128514;</span> ` + jokes.laughs
+        laughBtn.innerHTML = `<span class='laugh-btn '>&#128514;</span> ` + jokes.laughs + ' '
         laughBtn.addEventListener('click', () => {
             //console.log(event.target)
             let newLaughs = ++jokes.laughs 
@@ -136,7 +136,11 @@ function showJokes(users){
                                 footer = document.createElement('footer')
                                 newJokeLi.innerText = newJoke.description
                                 footer.innerText = authorName
-                                newJokeLi.append(footer)
+                                const laughBtn = document.createElement('span')
+                                laughBtn.innerHTML = `<span class='laugh-btn '>&#128514;</span> ` + newJoke.laughs + ' '
+                                const frownBtn = document.createElement('span')
+                                frownBtn.innerHTML = `<span class='frown-btn'>&#128534;</span> ` + newJoke.frowns
+                                newJokeLi.append(footer, laughBtn, frownBtn)
                                 ul.append(newJokeLi)
                                 jokeForm.reset()
                             }
