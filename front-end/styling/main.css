@@ -11,22 +11,33 @@ min-height: 290px; }
     padding-top: 35px;
    
 }
-/* 
+
 .headers{
     text-transform: capitalize;
-    color: color yellow;
-} */
+    font-family: 'Lucida Sans';
+   
+    border-bottom: 1px solid black;
+}
 
 .col-sm{
     padding-top: 100px;
     background-color: lightyellow;
     border: 1px solid black;
-    
+    column-width: auto;
+
+}
+
+
+.col-sm-5{
+    padding-top: 100px;
+    background-color: lightyellow;
+    border: 1px solid black;
+    column-width: auto;
 
 }
 
 #col-center{
-    padding-right: 100px;
+    align-content: center;
 }
 
 body{

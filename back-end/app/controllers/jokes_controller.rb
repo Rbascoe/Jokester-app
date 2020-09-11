@@ -4,7 +4,6 @@ class JokesController < ApplicationController
 
     def index
         jokes = Joke.all
-        # @top_one = Joke.top_one
         render json: jokes, includes: :user
     end
 
