@@ -7,17 +7,56 @@ min-height: 290px; }
     font: 'Montserrat', times;
     color: white;
     font-weight: 900;
+    font-size: 900%;
     padding-top: 35px;
    
 }
+/* 
+.headers{
+    text-transform: capitalize;
+    color: color yellow;
+} */
 
 .col-sm{
     padding-top: 100px;
     background-color: lightyellow;
+    border: 1px solid black;
+    
 
+}
+
+#col-center{
+    padding-right: 100px;
 }
 
 body{
     background-size: cover ;
-    background-color: lightyellow
+    background-color: lightyellow;
+    background-image: url(https://filmdaily.co/wp-content/uploads/2020/07/dirty-lede-1300x731.jpg);
+    background-size: 250px;    
+    min-height: 290px;
+}
+
+/* li{
+    text-align: left;
+} */
+
+#jokes-header{
+    text-align: center;
+}
+
+/* .laugh-btn{
+    justify-content: center;
+    align-items: center;
+  
+} */
+
+textarea{
+    width: 100%;
+    border: 2px solid black;
+}
+
+select{
+    border: 2px solid black;
+    width: 63%;
 }

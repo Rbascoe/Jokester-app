@@ -15,10 +15,12 @@
 
   <div class="container">
     <div class="row">
-      <div class="col-sm">
+      <div class="col-sm" id='col-left'>
         <div class="formcontainer">
       <form class="create-joke">
-          <h2>Create a Joke</h2>
+        <div class='headers'>
+          <h2 id='create-joke-header'>Create a Joke</h2>
+        </div>
             <label><strong>Description:</strong></label><br>
             <textarea type="text" placeholder="Enter a Joke"></textarea><br>
             <label><strong>Author:</strong></label><br>
@@ -31,30 +33,38 @@
           <button type="submit" class="btn btn-danger"><strong>Make A Joke</strong></button>
         </form>
       </div>
-      <div class="col-sm">
-        <h3>Joke of the Day</h3><br>
+      <div class="col-sm" id='col-center'>
+        <div class='headers'>
+          <h2 id='jokes-header'>All Jokes</h2>
+        </div>
+        <div class="joke-div">
+            <ul id="joke-list">
+
+            </ul>
+        </div>
+      </div>
+      <div class="col-sm" id='col-right'>
+        <div class='headers'>
+        <h2 class='joke-stats'>Joke of the Day</h2><br>
+        </div>
         <div class='joke-of-day'>
           <p id='joke-of-day'></p>
         </div>
-        <h3>Most Funniest Joke</h3><br>
+        <div class='headers'>
+        <h2 class='joke-stats'>Most Funniest Joke</h2><br>
+        </div>
         <div class='funniest-joke'>
           <p id='funniest-joke'></p>
         </div>
-        <h3>Least Funniest Joke</h3><br>
+        <div class='headers'>
+        <h2 class='joke-stats'>Least Funniest Joke</h2><br>
+        </div>
         <div class='worst-joke'>
           <p id='worst-joke'></p>
         </div>
 
 
         <div></div>
-      </div>
-      <div class="col-sm">
-          <h3>Jokes</h3>
-        <div class="joke-div">
-            <ul id="joke-list">
-
-            </ul>
-        </div>
       </div>
     </div>
   </div>

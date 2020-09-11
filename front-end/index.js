@@ -6,6 +6,8 @@ const ul = document.querySelector('ul#joke-list')
 const selector = document.querySelector('select#user-selector')
 const catSelector = document.querySelector('select#category-selector')
 const jokeForm = document.querySelector('form.create-joke')
+const br = document.createElement('br')
+
 
 
 function getUsers(){
@@ -19,12 +21,14 @@ getUsers()
 function showJokes(users){
     users.forEach(user => 
         user.jokes.forEach(jokes => {const jokeLi = document.createElement('li') 
+        const br = document.createElement('br')
         const footer = document.createElement('footer')
-        footer.innerText = user.username
+        footer.innerText = '-' + user.username
         jokeLi.innerText = jokes.description
         const laughBtn = document.createElement('span')
+
         
-        laughBtn.innerHTML = '<span>&#128514;</span> ' + jokes.laughs
+        laughBtn.innerHTML = `<span class='laugh-btn '>&#128514;</span> ` + jokes.laughs
         laughBtn.addEventListener('click', () => {
             //console.log(event.target)
             let newLaughs = ++jokes.laughs 
@@ -42,13 +46,13 @@ function showJokes(users){
             }
             fetch(jokesUrl+jokes.id, configObj)
             .then(res => res.json())
-            .then(laughs => laughBtn.innerHTML = '<span>&#128514;</span> ' + jokes.laughs)
+            .then(laughs => laughBtn.innerHTML = `<span class='laugh-btn '>&#128514;</span> ` + jokes.laughs)
         })
 
         
         const frownBtn = document.createElement('span')
         
-        frownBtn.innerHTML = '<span>&#128534;</span> ' + jokes.frowns
+        frownBtn.innerHTML = `<span class='frown-btn'>&#128534;</span> ` + jokes.frowns
         frownBtn.addEventListener('click', () => {
             //console.log(event.target)
             let newFrowns = ++jokes.frowns
@@ -66,11 +70,12 @@ function showJokes(users){
             }
             fetch(jokesUrl+jokes.id, configObj)
             .then(res => res.json())
-            .then(frowns => frownBtn.innerHTML = '<span>&#128534;</span> ' + jokes.frowns)
+            .then(frowns => frownBtn.innerHTML = `<span class='frown-btn'>&#128534;</span> ` + jokes.frowns)
         })
         
         jokeLi.append(footer, laughBtn, frownBtn)
-        ul.append(jokeLi) 
+        ul.append(br, jokeLi) 
+
         })
         
         )
