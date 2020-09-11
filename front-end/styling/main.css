@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap');
+
 .jumbotron.text-center{background-image: url(https://filmdaily.co/wp-content/uploads/2020/07/dirty-lede-1300x731.jpg);
 background-size: 250px;    
 min-height: 290px; }
@@ -9,14 +11,21 @@ min-height: 290px; }
     font-weight: 900;
     font-size: 900%;
     padding-top: 35px;
+    -webkit-text-stroke-color: black;
+    -webkit-text-stroke-width: 1px;
    
 }
 
 .headers{
     text-transform: capitalize;
-    font-family: 'Lucida Sans';
+    font-family: 'Comic Neue', cursive;
    
     border-bottom: 1px solid black;
+}
+
+strong{
+    font-family: 'Comic Neue', cursive;
+    font-size: large;
 }
 
 .col-sm{
