@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+.jumbotron.text-center{background-image: url(https://filmdaily.co/wp-content/uploads/2020/07/dirty-lede-1300x731.jpg);
+background-size: 250px;    
+min-height: 290px; }
+
+#main-header{
+    font: 'Montserrat', times;
+    color: white;
+    font-weight: 900;
+    padding-top: 35px;
+   
+}
+
+.col-sm{
+    padding-top: 100px;
+    background-color: lightyellow;
+
+}
+
+body{
+    background-size: cover ;
+    background-color: lightyellow
+}

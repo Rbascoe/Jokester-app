@@ -7,6 +7,7 @@ const selector = document.querySelector('select#user-selector')
 const catSelector = document.querySelector('select#category-selector')
 const jokeForm = document.querySelector('form.create-joke')
 
+
 function getUsers(){
     fetch(usersUrl)
     .then(res => res.json())
