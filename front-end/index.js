@@ -43,6 +43,7 @@ function showJokes(users){
             .then(res => res.json())
             .then(laughs => laughBtn.innerText = 'Laughs: ' + jokes.laughs)
         })
+
         
         const frownBtn = document.createElement('button')
         
@@ -139,32 +140,49 @@ function showJokes(users){
                     }
                     
                     
-                    //let randomValue = myArray[Math.floor(Math.random() * myArray.length)]; * myShows.length)];
-                    
                 }
                 
                 fetch(jokesUrl)
                 .then(res => res.json())
-                .then(jokesArray => jokesArray.forEach(joke => displayJoke(joke)))
+                .then(jokesArray => displayJoke(jokesArray))
                     
-                    function displayJoke(joke){
+                    function displayJoke(jokesArray){
                         //console.log(joke.description)
-                        let someArray = []
-                        someArray.push(joke.description)
-                        const p = document.createElement('p')
-                              p.innerText = someArray[Math.floor(Math.random() * someArray.length)]
-                              ul.append(p)
+                        //let someArray = []
+                        //someArray.push(joke.description)
+                        const randomJokePTag = document.createElement('p')
+                        randomJokePTag.innerText = jokesArray[Math.floor(Math.random() * jokesArray.length)].description
+                            
+                        let most_laughs = 0
+                        let top_joke = ''
+                        for (let i in jokesArray) {
+                        if(jokesArray[i].laughs > most_laughs){
+                            most_laughs = jokesArray[i].laughs
+                            top_joke = jokesArray[i].description
+                        }
+                   }
+                        const topLaughPTag = document.createElement('p')
+                        topLaughPTag.innerText = top_joke
 
-                        
-                        // // let jokesThing = jokesArray.forEach(jokes => jokes.description)
-                        // debugger
-                        // someArray.push(jokesArray.forEach(jokes => jokes.description)) 
-                        //     const p = document.createElement('p')
-                        //       p.innerText = someArray[Math.floor(Math.random() * someArray.length)]
-                        //       ul.append(p)
+                        let most_frowns = 0
+                        let top_frowns = ''
+                        for(let i in jokesArray) {
+                            if(jokesArray[i].frowns > most_frowns){
+                                most_laughs = jokesArray[i].frowns
+                                top_frowns = jokesArray[i].description
+                            }
+                        }
 
+                        const topFrownPTag = document.createElement('p')
+                        topFrownPTag.innerText = top_frowns
+
+
+
+                        ul.append(randomJokePTag, topLaughPTag, topFrownPTag)
                         
                     }
+
+
 
                   
                 
