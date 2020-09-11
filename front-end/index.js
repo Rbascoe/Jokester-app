@@ -23,7 +23,7 @@ function showJokes(users){
         jokeLi.innerText = jokes.description
         const laughBtn = document.createElement('button')
         
-        laughBtn.innerText = 'Laughs: ' + jokes.laughs
+        laughBtn.innerHTML = '<span>&#128514;</span> ' + jokes.laughs
         laughBtn.addEventListener('click', () => {
             //console.log(event.target)
             let newLaughs = ++jokes.laughs 
@@ -41,13 +41,13 @@ function showJokes(users){
             }
             fetch(jokesUrl+jokes.id, configObj)
             .then(res => res.json())
-            .then(laughs => laughBtn.innerText = 'Laughs: ' + jokes.laughs)
+            .then(laughs => laughBtn.innerHTML = '<span>&#128514;</span> ' + jokes.laughs)
         })
 
         
         const frownBtn = document.createElement('button')
         
-        frownBtn.innerText = 'Frowns: ' + jokes.frowns
+        frownBtn.innerHTML = '<span>&#128534;</span> ' + jokes.frowns
         frownBtn.addEventListener('click', () => {
             //console.log(event.target)
             let newFrowns = ++jokes.frowns
@@ -65,7 +65,7 @@ function showJokes(users){
             }
             fetch(jokesUrl+jokes.id, configObj)
             .then(res => res.json())
-            .then(frowns => frownBtn.innerText = 'Frowns: ' + jokes.frowns)
+            .then(frowns => frownBtn.innerHTML = '<span>&#128534;</span> ' + jokes.frowns)
         })
         
         
@@ -180,7 +180,7 @@ function showJokes(users){
 
 
 
-                       
+                
                         
                     }
 
