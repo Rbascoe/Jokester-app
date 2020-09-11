@@ -145,12 +145,14 @@ function showJokes(users){
                 fetch(jokesUrl)
                 .then(res => res.json())
                 .then(jokesArray => displayJoke(jokesArray))
+
+        
                     
                     function displayJoke(jokesArray){
                         //console.log(joke.description)
                         //let someArray = []
                         //someArray.push(joke.description)
-                        const randomJokePTag = document.createElement('p')
+                        const randomJokePTag = document.querySelector('p#joke-of-day')
                         randomJokePTag.innerText = jokesArray[Math.floor(Math.random() * jokesArray.length)].description
                             
                         let most_laughs = 0
@@ -161,7 +163,7 @@ function showJokes(users){
                             top_joke = jokesArray[i].description
                         }
                    }
-                        const topLaughPTag = document.createElement('p')
+                        const topLaughPTag = document.querySelector('p#funniest-joke')
                         topLaughPTag.innerText = top_joke
 
                         let most_frowns = 0
@@ -173,12 +175,12 @@ function showJokes(users){
                             }
                         }
 
-                        const topFrownPTag = document.createElement('p')
+                        const topFrownPTag = document.querySelector('p#worst-joke')
                         topFrownPTag.innerText = top_frowns
 
 
 
-                        ul.append(randomJokePTag, topLaughPTag, topFrownPTag)
+                       
                         
                     }
 

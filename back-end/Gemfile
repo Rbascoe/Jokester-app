@@ -21,6 +21,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'rack-cors'
 # Use to build Serializer for Controllers
 gem 'fast_jsonapi'
+gem 'bootstrap', '~> 4.5.2'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

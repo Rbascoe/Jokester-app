@@ -3,30 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <title>Jokester</title>
 </head>
-<body>
-  <h1 id="main-header">Jokester</h1>
-  <div class="formcontainer">
-    <form class="create-joke">
-        <h2>Create a Joke</h2>
-          <label><strong>Description:</strong></label><br>
-          <textarea type="text" placeholder="Enter a Joke"></textarea><br>
-          <label><strong>Author:</strong></label><br>
-          <select name="username" id="user-selector">
-          </select><br>
-          <label><strong>Categories:</strong></label><br>
-            <select name="title" id="category-selector">
-            </select>
+  <body>
+    <h1 id="main-header">Jokester</h1>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm">
+      <div class="formcontainer">
+      <form class="create-joke">
+          <h2>Create a Joke</h2>
+            <label><strong>Description:</strong></label><br>
+            <textarea type="text" placeholder="Enter a Joke"></textarea><br>
+            <label><strong>Author:</strong></label><br>
+            <select name="username" id="user-selector">
+            </select><br>
+            <label><strong>Categories:</strong></label><br>
+              <select name="title" id="category-selector">
+              </select>
 
-  </div><br>
-        <button type="submit"><strong>Make Joke</strong></button>
-      </form>
-    <div class="joke-div">
-        <ul id="joke-list">
+    </div><br>
+          <button type="submit"><strong>Make Joke</strong></button>
+        </form>
+      </div>
+      <div class="col-sm">
+        <h3>Joke of the Day</h3><br>
+        <div class='joke-of-day'>
+          <p id='joke-of-day'></p>
+        </div>
+        <h3>Most Funniest Joke</h3><br>
+        <div class='funniest-joke'>
+          <p id='funniest-joke'></p>
+        </div>
+        <h3>Least Funniest Joke</h3><br>
+        <div class='worst-joke'>
+          <p id='worst-joke'></p>
+        </div>
 
-        </ul>
+
+        <div></div>
+      </div>
+      <div class="col-sm">
+        <div class="joke-div">
+            <ul id="joke-list">
+
+            </ul>
+        </div>
+      </div>
     </div>
-    <script src="index.js"></script> 
-</body>
+  </div>
+      <script src="index.js"></script> 
+  </body>
 </html>
