@@ -135,7 +135,7 @@ function showJokes(users){
                                 newJokeLi = document.createElement('li')
                                 footer = document.createElement('footer')
                                 newJokeLi.innerText = newJoke.description
-                                footer.innerText = authorName
+                                footer.innerText = '-' + authorName
                                 const laughBtn = document.createElement('span')
                                 laughBtn.innerHTML = `<span class='laugh-btn '>&#128514;</span> ` + newJoke.laughs + ' '
                                 const frownBtn = document.createElement('span')
