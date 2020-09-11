@@ -21,7 +21,7 @@ function showJokes(users){
         const footer = document.createElement('footer')
         footer.innerText = user.username
         jokeLi.innerText = jokes.description
-        const laughBtn = document.createElement('button')
+        const laughBtn = document.createElement('span')
         
         laughBtn.innerHTML = '<span>&#128514;</span> ' + jokes.laughs
         laughBtn.addEventListener('click', () => {
@@ -45,7 +45,7 @@ function showJokes(users){
         })
 
         
-        const frownBtn = document.createElement('button')
+        const frownBtn = document.createElement('span')
         
         frownBtn.innerHTML = '<span>&#128534;</span> ' + jokes.frowns
         frownBtn.addEventListener('click', () => {
@@ -68,9 +68,9 @@ function showJokes(users){
             .then(frowns => frownBtn.innerHTML = '<span>&#128534;</span> ' + jokes.frowns)
         })
         
-        
         jokeLi.append(footer, laughBtn, frownBtn)
-        ul.append(jokeLi) })
+        ul.append(jokeLi) 
+        })
         
         )
         
