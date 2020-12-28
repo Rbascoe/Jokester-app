@@ -1,5 +1,5 @@
 class CategoriesSerializer
-  include FastJsonapi::ObjectSerializer
+  # include FastJsonapi::ObjectSerializer
   attributes :title
 
   has_many :jokes
